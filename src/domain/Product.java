@@ -1,10 +1,28 @@
 package domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "product")
 public class Product {
+	@Id
+	@GeneratedValue
 	private Integer id;
+	
+	@Column(name="name")
 	private String name;
+	
+	@Column(name="descriptor")
 	private String description;
+	
+	@Column(name="price")
 	private Double price;
+	
+	public Product() {};
 	
 	public Product(Integer id, String name, String description, Double price) {
 		this.id = id;

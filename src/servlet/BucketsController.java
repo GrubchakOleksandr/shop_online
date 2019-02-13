@@ -46,7 +46,7 @@ public class BucketsController extends HttpServlet {
 			bucketDto.bucketId = bucket.getId();
 			bucketDto.purchaseDate = bucket.getPurchaseDate();
 
-			Product product = idToProduct.get(bucket.getProductId());
+			Product product = idToProduct.get(bucket.getProduct().getId());
 			bucketDto.name = product.getName();
 			bucketDto.description = product.getDescription();
 			bucketDto.price = product.getPrice();
@@ -54,5 +54,6 @@ public class BucketsController extends HttpServlet {
 			return bucketDto;
 		}).collect(Collectors.toList());
 
-	}
+	}		
+	
 }

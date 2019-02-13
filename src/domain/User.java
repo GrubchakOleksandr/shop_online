@@ -1,14 +1,36 @@
 package domain;
 
-public class User {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table (name = "user")
+public class User {
+	
+	@Id
+	@GeneratedValue
 	private Integer id;
+	
+	@Column (name = "email")
 	private String email;
+	
+	@Column (name = "firstName")
 	private String firstName;
+	
+	@Column (name = "lastName")
 	private String lastName;
+	
+	@Column (name = "role")
 	private String role;
+	
+	@Column (name = " password")
 	private String password;
 
+	public User() {};
+	
 	public User(Integer id, String email, String firstName, String lastName, String role, String password) {
 		this.id = id;
 		this.email = email;
